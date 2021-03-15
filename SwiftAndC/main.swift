@@ -7,5 +7,8 @@
 
 import Foundation
 
-print("Hello, World!")
+let base:Double = 6.5
+let exp:Int = 3
+
+print("\(base)^\(exp) = \(PCH_Pow(base, Int32(exp)))")
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D307C161260019C5006DD1E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307C160260019C5006DD1E8 /* main.swift */; };
+		D307C16B260019E6006DD1E8 /* Cfunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = D307C16A260019E6006DD1E8 /* Cfunctions.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		D307C15D260019C5006DD1E8 /* SwiftAndC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAndC; sourceTree = BUILT_PRODUCTS_DIR; };
 		D307C160260019C5006DD1E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D307C168260019E6006DD1E8 /* SwiftAndC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftAndC-Bridging-Header.h"; sourceTree = "<group>"; };
+		D307C169260019E6006DD1E8 /* Cfunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cfunctions.h; sourceTree = "<group>"; };
+		D307C16A260019E6006DD1E8 /* Cfunctions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Cfunctions.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				D307C160260019C5006DD1E8 /* main.swift */,
+				D307C169260019E6006DD1E8 /* Cfunctions.h */,
+				D307C16A260019E6006DD1E8 /* Cfunctions.c */,
+				D307C168260019E6006DD1E8 /* SwiftAndC-Bridging-Header.h */,
 			);
 			path = SwiftAndC;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 				TargetAttributes = {
 					D307C15C260019C5006DD1E8 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -120,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D307C161260019C5006DD1E8 /* main.swift in Sources */,
+				D307C16B260019E6006DD1E8 /* Cfunctions.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,10 +253,18 @@
 		D307C165260019C5006DD1E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R3HXUUS44;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAndC/SwiftAndC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -255,10 +272,17 @@
 		D307C166260019C5006DD1E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R3HXUUS44;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAndC/SwiftAndC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
